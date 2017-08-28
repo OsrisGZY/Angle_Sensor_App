@@ -12,3 +12,4 @@ C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x64\Release\UserAp
 C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x64\Release\UserApp.pdb
 C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\x64\Release\Sensor.dll
 C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x64\Release\UserApp.ZeroPosition.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\x64\Release\Fit_Parameter.dll

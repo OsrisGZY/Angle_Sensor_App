@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sensor;
+using Fit_Parameter;
 using MathWorks.MATLAB.NET.Arrays;
 using MathWorks.MATLAB.NET.Utility;
 
@@ -94,17 +95,20 @@ namespace UserApp
 
 
 
-            MWArray[] result = new Sensor.Sensor().error_cal(8,theta, U_1, U_2); 
+            MWArray[] result_1 = new Fit_Parameter.Class1().Fit_1(4, theta, U_1);
+            MWArray[] result_2 = new Fit_Parameter.Class1().Fit_2(4,theta, U_2); 
          //   up = (MWNumericArray)new Sensor.Sensor().envelope(theta, U_1);
-               Array a = result.ToArray();
-
+               Array a = result_1.ToArray();
+               Array b = result_2.ToArray();
+               double envelope = (double.Parse(a.GetValue(2).ToString())+double.Parse(b.GetValue(2).ToString()))/2;
+               double alpha = (double.Parse(a.GetValue(3).ToString()) + double.Parse(b.GetValue(3).ToString())) / 2;
 
                textBox13.Text = a.GetValue(0).ToString();  //A_1
          textBox9.Text = a.GetValue(1).ToString();  //d_1
-            textBox14.Text = a.GetValue(3).ToString();  //A_2
-            textBox10.Text = a.GetValue(4).ToString();  //d_2
-            textBox18.Text = a.GetValue(6).ToString();  //a_0
-            textBox23.Text =a.GetValue(7).ToString();  //alpha  
+            textBox14.Text = b.GetValue(0).ToString();  //A_2
+            textBox10.Text = b.GetValue(1).ToString();  //d_2
+            textBox18.Text = envelope.ToString();  //a_0
+            textBox23.Text = alpha.ToString();  //alpha  
 
             theta.Dispose();
             U_1.Dispose();
