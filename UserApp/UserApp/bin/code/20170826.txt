@@ -1,0 +1,26 @@
+ MWNumericArray theta = new MWNumericArray(1, sample_counts, sample_position); 
+            MWNumericArray U_1 = new MWNumericArray(1, sample_counts, u1);
+            MWNumericArray U_2 = new MWNumericArray(1, sample_counts, u2);
+
+            MWNumericArray up = new MWNumericArray();
+            MWNumericArray down = new MWNumericArray();
+            
+        //    MWArray[] result = new Sensor.Sensor().error_cal(8,theta, U_1, U_2); 
+            up=(MWNumericArray) new Sensor.Sensor().envelope(theta, U_1); 
+         //   Array a = result.ToArray();
+
+            MWArray mwArr2 = (MWNumericArray)new Sensor.Sensor().envelope(theta, U_1);
+            Array dArr3 = ((MWNumericArray)mwArr2).ToVector(MWArrayComponent.Real);
+            double[] a = (double[])dArr3;
+            
+          textBox13.Text = a.Rank.ToString();  //A_1
+    //        textBox9.Text = a.GetValue(1).ToString();  //d_1
+      //      textBox14.Text = a.GetValue(3).ToString();  //A_2
+        //    textBox10.Text = a.GetValue(4).ToString();  //d_2
+          //  textBox18.Text = a.GetValue(6).ToString();  //a_0
+            //textBox23.Text = a.GetValue(7).ToString();  //alpha
+           
+            theta.Dispose();
+            U_1.Dispose();
+            U_2.Dispose();
+     //       result.Dispose();
