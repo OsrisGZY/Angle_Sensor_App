@@ -1,0 +1,11 @@
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\Release\UserApp.exe.config
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\Release\UserApp.exe
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\Release\UserApp.pdb
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.Calibration.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.Main.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.parameter.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.Properties.Resources.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.verification_win.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.csproj.GenerateResource.Cache
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.exe
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\Release\UserApp.pdb
