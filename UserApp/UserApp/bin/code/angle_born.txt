@@ -1,0 +1,37 @@
+ private void button2_Click(object sender, EventArgs e)
+        {
+            //data acquire or born
+            sample_position = new double[sample_counts];
+            u1 = new double[sample_counts];
+            u2 = new double[sample_counts];
+
+            Random rnd = new Random();
+            sample_position[0] = 0;
+            u1[0] = (Program.fine_sin_amplitude * Math.Sin(sample_position[0]) + Program.fine_sin_offeset) * (1 + Program.fine_envelope * Math.Sin(sample_position[0] / Program.N + Program.fine_Angle_Offset));
+            u2[0] = (Program.fine_cos_amplitude * Math.Cos(sample_position[0]) + Program.fine_cos_offeset) * (1 + Program.fine_envelope * Math.Sin(sample_position[0] / Program.N + Program.fine_Angle_Offset));
+
+            theta = new MWNumericArray(sample_position[0]);
+            U_1 = new MWNumericArray(u1[0]);
+            U_2 = new MWNumericArray(u2[0]);
+            Plot_User plot = new Plot_User();
+            plot.plot_Point(U_1, U_2);
+
+            progressBar1.Value = 0;
+
+            for (int i = 1; i < sample_counts; i++)
+            {
+
+                sample_position[i] = 200 * Math.PI * i / sample_counts + rnd.NextDouble() ;
+                u1[i] = (Program.fine_sin_amplitude * Math.Sin(sample_position[i]) + Program.fine_sin_offeset) * (1 + Program.fine_envelope * Math.Sin(sample_position[i] / Program.N + Program.fine_Angle_Offset));
+                u2[i] = (Program.fine_cos_amplitude * Math.Cos(sample_position[i]) + Program.fine_cos_offeset) * (1 + Program.fine_envelope * Math.Sin(sample_position[i] / Program.N + Program.fine_Angle_Offset));
+
+                U_1 = new MWNumericArray(u1[i]);
+                U_2 = new MWNumericArray(u2[i]);
+                plot.plot_Point(U_1, U_2);
+
+                progressBar1.Value = (int)(100 * (i + 1) / sample_counts);
+            }
+
+            MessageBox.Show("Data has been acquired");
+            progressBar1.Value = 0;
+        }

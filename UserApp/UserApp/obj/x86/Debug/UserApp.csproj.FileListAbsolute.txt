@@ -1,0 +1,13 @@
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\x86\Debug\UserApp.exe.config
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\x86\Debug\UserApp.exe
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\x86\Debug\UserApp.pdb
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\bin\x86\Debug\Sensor.dll
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.csprojResolveAssemblyReference.cache
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.Calibration.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.Main.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.parameter.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.Properties.Resources.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.verification_win.resources
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.csproj.GenerateResource.Cache
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.exe
+C:\Users\aa\Desktop\C#_Program\C#_Program\UserApp\UserApp\obj\x86\Debug\UserApp.pdb
