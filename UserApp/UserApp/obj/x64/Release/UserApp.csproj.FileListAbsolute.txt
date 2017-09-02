@@ -31,3 +31,4 @@ C:\Users\aa\Desktop\Angle_Sensor_App-master\UserApp\UserApp\obj\x64\Release\User
 C:\Users\aa\Desktop\Angle_Sensor_App-master\UserApp\UserApp\obj\x64\Release\UserApp.csproj.GenerateResource.Cache
 C:\Users\aa\Desktop\Angle_Sensor_App-master\UserApp\UserApp\obj\x64\Release\UserApp.exe
 C:\Users\aa\Desktop\Angle_Sensor_App-master\UserApp\UserApp\obj\x64\Release\UserApp.pdb
+C:\Users\aa\Desktop\Angle_Sensor_App-master\UserApp\UserApp\obj\x64\Release\UserApp.Analyse.resources

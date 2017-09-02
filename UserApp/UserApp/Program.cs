@@ -50,7 +50,7 @@ namespace UserApp
                     result = Convert.ToInt32(bin_angle, 2);
                     break;
                 case 2:
-                    bit_number = 24; //sin cos convert
+                    bit_number = 32; //sin cos convert
                     if (bin_angle.Length < bit_number)
                         result = Convert.ToInt32(bin_angle, 2);
                     else   //negative number
@@ -70,7 +70,7 @@ namespace UserApp
             if (flag == 1)
                 result = result * Math.PI / Math.Pow(2, 30);
             else
-                result = result / Math.Pow(2, 23);
+                result = result / Math.Pow(2, 31);
 
             return result;
         }

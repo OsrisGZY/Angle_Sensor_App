@@ -9,7 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO.Ports;
+using System.Threading;
 
+using Fit_Parameter;
+using Plot_Circle;
+
+using MathWorks.MATLAB.NET.Arrays;
+using MathWorks.MATLAB.NET.Utility;
 
 namespace UserApp
 {
@@ -31,6 +37,7 @@ namespace UserApp
             f2 = new Calibration();
             f3 = new parameter();
             f4 = new ZeroPosition();
+            f5 = new Analyse();
 
           
         }
@@ -38,41 +45,7 @@ namespace UserApp
         private void Form1_Load(object sender, EventArgs e)
         {
             count = 0;
-            counts_show.Text = count.ToString();
-            Program.port = new SerialPort();
-            Program.port.PortName = "COM4";
-            Program.port.BaudRate = 115200;
-            Program.port.DataBits = 8;
-            Program.port.Parity = Parity.None;
-            Program.port.StopBits = StopBits.One;
-            Program.port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
-
-      private  void DataReceivedHandler(
-                        object sender,
-                        SerialDataReceivedEventArgs e)
-    {
-        SerialPort sp = (SerialPort)sender;
-        this.Position_show.Invoke(
-            new MethodInvoker(
-                delegate
-                {
-                    
-                   string  now =sp.ReadExisting();  //data cleared after been read
-                   int n = now.Length;
-                   StringBuilder sb = new StringBuilder();
-                    
-                  for (int i = 0; i < n/2;i++ )
-                    {
-                        sb.Append(now[2 * i]);
-                    } 
-                    this.Position_show.Text = sb.ToString();
-                    count++;
-                    counts_show.Text = count.ToString();
-                }
-                            )
-                                );
-    }
 
 
 
@@ -168,6 +141,12 @@ namespace UserApp
             {
                 f4.display = false;
                 f4.Close();
+            }
+            if (f5.display == true)
+            {
+                f5.display = false;
+                Program.port.Close();
+                f5.Close();
             } 
             
         }
@@ -177,6 +156,7 @@ namespace UserApp
         public Calibration f2;
         public parameter f3;
         public ZeroPosition f4;
+        public Analyse f5;
         public int count;
 
         private void supportToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,17 +174,11 @@ namespace UserApp
         private void Reset_Click(object sender, EventArgs e)
         {
 
-            Program.port.Close();
+            
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            if (!Program.port.IsOpen)              
-                Program.port.Open();
-            if (Program.port.IsOpen)
-            {
+  /*    //write to port
                 Random rand = new Random();
                 for (int i = 1; i < 10; i++)
                 {
@@ -213,12 +187,19 @@ namespace UserApp
                     String b = a.ToString() + " " + (a / 3).ToString() + "___";
                     Program.port.WriteLine(b);
                 }
-            }
-            else
-                MessageBox.Show("ERROR");
+  */
+
+        private void signalAnalyzerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            f5 = new Analyse();
+            f5.display = true;
+            f5.Show();
 
         }
 
+       
+    
 
 
 

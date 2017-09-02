@@ -54,7 +54,7 @@ namespace UserApp
         public bool display; //to show if the win is displayed
         public int sample_counts;
         double[] u1, u2, sample_position;
-        MWArray theta, U_1, U_2;
+    //     MWArray theta, U_1, U_2;
  
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,7 +81,12 @@ namespace UserApp
             Program.port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
 
             Program.Read_count = 0;
-            Program.port.Open();
+            if (Program.port.IsOpen)
+                MessageBox.Show("COM4 is now been ocupied");
+            else
+            {
+                Program.port.Open();
+            }
             Plot_User plot = new Plot_User();
             progressBar1.Value = 0;
 
@@ -155,9 +160,9 @@ namespace UserApp
                       bool search = true;
                       while(search)
                       {
-                          if(now.Substring(22,2)=="55")
+                          if(now.Substring(26,2)=="55")
                           {
-                              now = now.Substring(0, 24);
+                              now = now.Substring(0, 28);
                               search = false;
                           }
                           else
@@ -170,8 +175,8 @@ namespace UserApp
                       }
 
                           angle_value = now.Substring(2, 8);
-                          sin_value = now.Substring(10, 6);
-                          cos_value = now.Substring(16, 6);
+                          sin_value = now.Substring(10, 8);
+                          cos_value = now.Substring(18, 8);
                          
                       sp.DiscardInBuffer();
 
@@ -204,10 +209,8 @@ namespace UserApp
             double num=Program.Read_count;
             temp.Text = c.ToString();
 
-            Thread.Sleep(50);
-
             plot = new Plot_User();
-            plot.plot_Point(num, c);
+            plot.plot_Point(b, a);
             plot.Dispose();
 
             Thread.Sleep(2);
